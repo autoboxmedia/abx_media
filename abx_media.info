@@ -1,0 +1,8 @@
+name = Custom Media Features
+description = Enhancements for the Media suite.
+package = Autobox
+core = 7.x
+
+dependencies[] = file_entity
+dependencies[] = media
+

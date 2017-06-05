@@ -1,0 +1,24 @@
+<?php
+function abx_media_init() {
+  if (arg(0) == 'admin' || arg(0) == 'node') {
+	  drupal_add_js(drupal_get_path('module', 'abx_media') .'/abx_media.js');
+  }
+}
+
+/**
+ * Implements hook_menu().
+ *
+ */
+function abx_media_menu() {
+	$items['admin/content/media/add'] = array(
+    'title' => 'Add media',
+	'access arguments' => array('access media browser'),
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('file/add'),
+  );
+
+  return $items;
+}
+
+require_once dirname(__FILE__) . '/abx_media.media.inc';
+
